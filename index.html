@@ -14,7 +14,7 @@
       .myVideo {
         min-width: 100vw;
         min-height: 100vh;
-        opacity: 0.9;
+        opacity: 0.8;
       }
       .text {
         position: fixed;
@@ -24,11 +24,17 @@
         font-family: 'Great Vibes', cursive;
         color: #ffffff;
       }
-      .text h2 {
+      #title h2 {
         font-size: 7vh;
       }
       #title {
         top: 30vh;
+      }
+      #time h1 {
+        font-size: 12vh;
+      }
+      #time {
+        top: 35vh;
       }
     </style>
     
@@ -40,5 +46,26 @@
     <div class="text" id="title">
       <h2>Christmas countdown</h2>
     </div>
+    <div class="text" id="time">
+      <h1 id="actualTime">3 Days</h1>
+    </div>
+    <script>
+      window.requestAnimationFrame(gameLoop);
+      
+      function gameLoop() {
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 0, 0);
+        var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var christmasDay = 359;
+        if (now.getFullYear()%4 === 0) {
+          christmasDay = 360;
+        }
+        document.getElementById("actualTime").innerHTML = (christmasDay-day)+" Days";
+        console.log('Day of year: ' + day);
+        window.requestAnimationFrame(gameLoop);
+      }
+    </script>
   </body>
 </html>
