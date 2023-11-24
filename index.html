@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
       body {
         margin: 0px;
@@ -11,11 +14,27 @@
         min-width: 100vw;
         min-height: 100vh;
       }
+      .text {
+        position: fixed;
+        text-align: center;
+        bottom: 0;
+        top: 0;
+        user-select: none;
+        font-family: 'Great Vibes', cursive;
+        color: #ffffff;
+      }
+      .text h2 {
+        font-size: 100px;
+      }
     </style>
+    
   </head>
   <body>
     <video autoplay muted loop class="myVideo">
       <source src="bgs/bg0.mp4" type="video/mp4">
     </video>
+    <div class="text">
+      <h2>Christmas countdown</h2>
+    </div>
   </body>
 </html>
