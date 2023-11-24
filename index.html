@@ -40,9 +40,9 @@
     
   </head>
   <body>
-    <video autoplay muted loop class="myVideo">
-      <source src="bgs/bg1.mp4" type="video/mp4">
-    </video>
+    <div id="video">
+      <video autoplay muted loop class="myVideo"><source src="bgs/bg1.mp4" type="video/mp4" id="vidSrc"></video>
+    </div>
     <div class="text" id="title">
       <h2>Christmas countdown</h2>
     </div>
@@ -63,7 +63,12 @@
           christmasDay = 360;
         }
         document.getElementById("actualTime").innerHTML = (christmasDay-day)+" Days";
-        console.log('Day of year: ' + day);
+        let vid = document.getElementById("vidSrc");
+        let curVid = (day%3)+1;
+        console.log(vid.getAttribute("src"));
+        if (vid.getAttribute("src") !== "bgs/bg"+curVid+".mp4") {
+          document.getElementById("video").innerHTML=`<video autoplay muted loop class="myVideo"><source src="bgs/bg`+curVid+`.mp4" type="video/mp4" id="vidSrc"></video>`;
+        }
         window.requestAnimationFrame(gameLoop);
       }
     </script>
