@@ -2,19 +2,20 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
     <style>
-      #myVideo {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
+      body {
+        margin: 0px;
+        overflow: hidden;
+      }
+      .myVideo {
+        min-width: 100vw;
+        min-height: 100vh;
       }
     </style>
-    <video autoplay muted loop id="myVideo">
-      <source src="rain.mp4" type="video/mp4">
+  </head>
+  <body>
+    <video autoplay muted loop class="myVideo">
+      <source src="bgs/bg0.mp4" type="video/mp4">
     </video>
   </body>
 </html>
