@@ -9,22 +9,26 @@
       body {
         margin: 0px;
         overflow: hidden;
+        background-color: #000000;
       }
       .myVideo {
         min-width: 100vw;
         min-height: 100vh;
+        opacity: 0.9;
       }
       .text {
         position: fixed;
         text-align: center;
-        bottom: 0;
-        top: 0;
+        width: 100vw;
         user-select: none;
         font-family: 'Great Vibes', cursive;
         color: #ffffff;
       }
       .text h2 {
-        font-size: 100px;
+        font-size: 7vh;
+      }
+      #title {
+        top: 30vh;
       }
     </style>
     
@@ -33,7 +37,7 @@
     <video autoplay muted loop class="myVideo">
       <source src="bgs/bg1.mp4" type="video/mp4">
     </video>
-    <div class="text">
+    <div class="text" id="title">
       <h2>Christmas countdown</h2>
     </div>
   </body>
